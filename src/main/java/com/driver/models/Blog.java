@@ -22,21 +22,14 @@ public class Blog {
     private Date pubDate;
 
     @OneToMany(mappedBy = "blog",cascade =CascadeType.ALL)
-    private List<Image> imageList;
+    private List<Image> imageList=new ArrayList<>();
 
     @ManyToOne
     @JoinColumn
     private User user;
 
     public Blog() {
-        imageList=new ArrayList<>();
-    }
 
-    public Blog( User user,String title,String content) {
-        imageList=new ArrayList<>();
-        this.user = user;
-        this.title=title;
-        this.content = content;
     }
 
     public int getId() {

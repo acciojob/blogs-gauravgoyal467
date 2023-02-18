@@ -21,16 +21,12 @@ public class User {
 
 
     @OneToMany(mappedBy = "user",cascade =CascadeType.ALL)
-    private List<Blog> blogList;
+    private List<Blog> blogList=new ArrayList<>();
 
     public User() {
-        blogList=new ArrayList<>();
+
     }
-    public User(String username, String password) {
-        blogList=new ArrayList<>();
-        this.userName=username;
-        this.password=password;
-    }
+
 
     public int getId() {
         return id;
